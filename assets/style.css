@@ -1,0 +1,158 @@
+/*
+--cultured: #efefef;
+--cerulean-blue: #3454d1;
+--turquoise: #34d1bf;
+--rich-black-fogra-39: #070707;
+--cerise: #d1345b;
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.flex-container { 
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@font-face{
+    font-family: lemonmilk;
+    src: url('fnt/LEMONMILK-Regular.otf');
+}
+
+#home #feature {
+    height: 70vh;
+    animation: Waves 20s linear infinite;
+    background: radial-gradient(#3454d1 10%,#d1345b 35%, #d1345b 60%, #3454d1 80%);
+    background-size: 400% 400%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#home #feature h1 {
+    font-family: lemonmilk;
+    font-size: 72pt;
+    color: #070707;
+    text-align: center;
+}
+
+#home #feature ul {
+    list-style: none;
+    padding: 40px 0;
+}
+
+#home #feature #buttons {
+    justify-content: space-around;
+}
+
+#home #feature li {
+    width: 40%;
+}
+
+#home #feature a {
+    background-color: #34d1bf;
+    width: 100%;
+    padding: 20px;
+    display: block;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    font-family: lemonmilk;
+    border-radius: 2px;
+    box-shadow: 0px 0px 3px #fff;
+    transition-duration: .2s;
+}
+
+#home #feature a:hover {
+    box-shadow: 0px 0px 3px #fff, 3px 3px 3px #333;
+    background-color: #1c9789;
+    color: #ccc;
+    transition-duration: .2s;
+}
+
+@keyframes Waves { 
+    0%{background-position:0% 0%}
+    50%{background-position:90% 100%}
+    100%{background-position:0% 0%}
+}
+
+#home #info {
+    min-height: 30vh;
+    background-color: #070707;
+}
+
+#home #info #cards {
+    justify-content: space-around;
+    width: 70%;
+    margin: 0 auto;
+    align-items: stretch;
+    height: 100%;
+    padding: 15px;
+    row-gap: 10px;
+}
+
+#home #info #cards > div {
+    background-color: rgba(255,255, 255,0.8);
+    border-radius: 10px;
+    padding: 10px;
+    color: #070707;
+    width: 25%;
+}
+
+#home #info #cards i {
+    display: inherit;
+    text-align: center;
+    font-size: 42pt;
+    padding: 20px;
+}
+
+#home #info #cards h1 {
+    font-family: lemonmilk;
+    font-size: 12pt;
+    padding: 10px;
+    text-align: center;
+}
+
+#home #info #cards p {
+    text-align: justify;
+    padding: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 11pt;
+}
+
+#home #info #cards > div:hover {
+    background-color: #efefef;
+    cursor: pointer;
+}
+
+#home #info #cards > div:nth-child(1):hover i, #home #info #cards > div:nth-child(1):hover h1 {
+    color: #34d1bf;
+}
+
+#home #info #cards > div:nth-child(2):hover i, #home #info #cards > div:nth-child(2):hover h1 {
+    color: #d1345b;
+}
+
+#home #info #cards > div:nth-child(3):hover i, #home #info #cards > div:nth-child(3):hover h1 {
+    color: #3454d1;
+}
+
+@media all and (max-width: 960px){
+    #home #info #cards > div {
+        width: 70%;
+    }
+}
+
+@media all and (max-width: 768px){
+    #home #info #cards > div {
+        width: 100%;
+    }
+
+    #home #feature h1 {
+        font-size: 56pt;
+    }
+} 
