@@ -24,14 +24,45 @@
 
 #home #feature {
     height: 70vh;
-    animation: Waves 20s linear infinite;
-    background: radial-gradient(#3454d1 10%,#d1345b 35%, #d1345b 60%, #3454d1 80%);
-    background-size: 400% 400%;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
+#login, #signup, #home #feature {
+    animation: Waves 20s linear infinite;
+    background: radial-gradient(#3454d1 10%,#d1345b 35%, #d1345b 60%, #3454d1 80%);
+    background-size: 400% 400%;
+}
+
+#login, #signup {
+    min-height: 100vh;
+    background-attachment: fixed;
+}
+
+.glass-card {
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
+    border-radius: 5px;
+    position: relative;
+    z-index: 1;
+    background: inherit;
+    overflow: hidden;
+  }
+  
+  .glass-card:before {
+    content: "";
+    position: absolute;
+    background: inherit;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
+    filter: blur(10px);
+    margin: -20px;
+  }
 
 #home #feature h1 {
     font-family: lemonmilk;
@@ -139,6 +170,17 @@
 
 #home #info #cards > div:nth-child(3):hover i, #home #info #cards > div:nth-child(3):hover h1 {
     color: #3454d1;
+}
+
+#login #content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#login form {
+    width: 30%;
+    margin: 0 auto;
 }
 
 @media all and (max-width: 960px){
