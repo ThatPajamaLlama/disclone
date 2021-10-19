@@ -4,12 +4,12 @@
     <body id="home">
         <div id="content">
 
-            <div id="feature">
+            <div id="feature" class="center-contents">
                 <div>
                     <h1>Disclone</h1>
                     <ul id="buttons" class="flex-container">
-                        <li><a href="login.php">Login</a></li>
-                        <li><a href="signup.php">Sign up</a></li>
+                        <li><a href="login.php" class="action-button">Login</a></li>
+                        <li><a href="signup.php" class="action-button">Sign up</a></li>
                     </ul>
                 </div>
             </div>
