@@ -17,6 +17,12 @@
     flex-wrap: wrap;
 }
 
+.center-contents {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* Glass card repurposed from W3Schools sample code*/
 .glass-card {
     box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
@@ -41,16 +47,56 @@
     margin: -20px;
 }
 
-.center-contents {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* Validation */
+form .section {
+    position: relative;
+}
+
+form .section .fa-check-circle, form .section .fa-times-circle {
+    visibility: hidden;
+    position: absolute;
+    right: 10px;
+    top: 35px;
+}
+
+form .section.success input {
+    border: 2px solid #0CCE6B;
+}
+
+form .section.success .fa-check-circle {
+    visibility: visible;
+    color: #0CCE6B;
+}
+
+form .section.error input {
+    border: 2px solid #FB3640;
+}
+
+form .section.error .fa-times-circle {
+    visibility: visible;
+    color: #FB3640;
+}
+
+form .section p {
+    visibility: hidden;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 10pt;
+    font-style: italic;
+}
+
+form .section.error p {
+    visibility: visible;
 }
 
 @font-face{
     font-family: lemonmilk;
     src: url('fnt/LEMONMILK-Regular.otf');
 }
+
+
+
+
+
 
 
 
@@ -223,8 +269,8 @@
     padding: 8px;
 }
 
-.form-page form input[type="text"]{
-    margin-top: 10px;
+.form-page form input[type="text"], .form-page form input[type="password"]{
+    margin-top: 5px;
 }
 
 .form-page form input[type="submit"] {
@@ -232,6 +278,11 @@
     cursor: pointer;
     box-shadow: 0px 0px 3px #222;
 }
+
+
+
+
+/* Animations */
 
 @keyframes PulseText {
     0% {color: black;}
