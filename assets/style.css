@@ -23,6 +23,27 @@
   align-items: center;
 }
 
+/* Scroll bar */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #111;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 /* Glass card repurposed from W3Schools sample code*/
 .glass-card {
   box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
@@ -371,6 +392,8 @@ form .section.error p {
   box-shadow: 0px 0px 3px #222;
 }
 
+/* ---------- ERROR PAGE ---------- */
+
 #error .glass-card {
   width: 40%;
   margin: 0 auto;
@@ -382,12 +405,314 @@ form .section.error p {
   font-family: lemonmilk;
   padding: 20px;
   font-size: 36pt;
+  text-decoration: underline;
 }
 
 #error .glass-card h2 {
   font-family: lemonmilk;
   font-size: 14pt;
 }
+
+#error a {
+  display: block;
+  margin: 20px auto;
+  width: 30%;
+  padding: 10px;
+}
+
+/* ---------- CHAT ---------- */
+
+#chat, #side-menu, #chat-window, #users {
+  max-height: 100vh;
+}
+
+/* Side menu */
+
+#side-menu {
+  width: 20%;
+  background-color: green;
+  display: flex;
+}
+
+#servers {
+  width: 25%;
+  background-color: #111;
+  position: relative;
+}
+
+.server {
+  padding: 5px 0;
+}
+
+.server:hover {
+  background-color: #333;
+  cursor: hand;
+}
+
+.server:hover h1 {
+  color: #34d1bf;
+}
+
+.server:hover .server-image {
+  box-shadow: inset 0 0 10px #34d1bf, 0 0 10px #34d1bf;
+}
+
+.server h1 {
+  color: #bbb;
+  font-family: lemonmilk;
+  padding: 0% 10%;
+  font-size: 8pt;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+
+.server-image {
+  height: 0;
+  width: 80%;
+  padding-bottom: 80%;
+  border-radius: 10%;
+  margin: 10% auto;
+  background-size: cover;
+  background-position: center;
+}
+
+.server.add .server-image {
+  background-color: #d1345b;
+  border-radius: 50%;
+}
+
+.server.active .server-image {
+  box-shadow: inset 0 0 10px #fff, 0 0 10px #fff;
+}
+
+.server.active h1 {
+  color: white;
+}
+
+#server-buttons {
+  bottom: 0;
+  position: absolute;
+  padding: 10%;
+  font-family: lemonmilk;
+}
+
+#server-buttons h1 {
+  font-size: 8pt;
+  color: white;
+  margin: 2px 0;
+  display: inline-block;
+  width: 100%;
+  background-color: #d1345b;
+  border-radius: 2px;
+}
+
+#server-buttons h1:hover {
+  background-color: #90223e;
+}
+
+#server-buttons a {
+  display: block;
+  width: 100%;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  padding: 5px 0;
+}
+
+#server-buttons h1.logout {
+  background-color: #34d1bf;
+}
+
+#server-buttons h1.logout a {
+  color: #333;
+}
+
+#server-buttons h1.logout:hover {
+  background-color: #209789;
+}
+
+
+#rooms {
+  width: 75%;
+  background-color: #222;
+  padding: 3%;
+}
+
+#rooms h1.server-name {
+  color: white;
+  border-bottom: 1px solid white;
+  font-family: lemonmilk;
+  font-size: 14pt;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+#rooms .room, #rooms .add-room {
+  font-weight: normal;
+  font-family: lemonmilk;
+  font-size: 12pt;
+  margin: 20px 0;
+}
+
+#rooms .room a, #rooms .add-room a {
+  text-decoration: none;
+  display: inline-block;
+  width: 100%;
+  padding: 5px 10px;
+  border-radius: 50px;
+}
+
+#rooms .room i, #rooms .add-room i {
+  padding-right: 10px;
+}
+
+#rooms .add-room a {
+  background-color: #d1345b;
+  color: white;
+  text-align: center;
+}
+
+#rooms .room a, #rooms .room a {
+  color: #aaa;
+}
+
+#rooms .room.active a {
+  color: white;
+  background-color: #666;
+}
+
+#rooms .room:not(.active) a:hover {
+  background-color: #444;
+  color: white;
+}
+
+/* Chat window */
+
+#chat-window {
+  width: 65%;
+  background-color: #333;
+
+}
+
+#chat-window #messages {
+  overflow-y: scroll;
+  max-height: 92vh;
+}
+
+#chat-window .message {
+  padding: 15px;
+}
+
+#chat-window .message h1 {
+  font-family: Verdana;
+  font-size: 12pt;
+  color: #34d1bf;
+}
+
+#chat-window .message p {
+  font-family: verdana;
+  color: white;
+}
+
+#chat-window #new-message {
+  max-height: 8vh;
+  height: 8vh;
+}
+
+#chat-window #new-message form {
+  height: 100%;
+  width: 100%;
+  padding: 0 15px 30px 15px;
+}
+
+#chat-window form div {
+  height: 100%;
+  justify-content: space-between;
+}
+
+#chat-window #new-message textarea {
+  width: 87%;
+  border: none;
+  padding: 10px;
+  resize: none;
+  font-family: Verdana;
+  background-color: #444;
+  color: white;
+  font-size: 12pt;
+}
+
+#chat-window #new-message button {
+  width: 10%;
+  border-radius: 100px;
+  border: none;
+  background-color: #d1345b;
+  color: white;
+  font-size: 16pt;
+}
+
+#chat-window #new-message button:hover {
+  border: none;
+  background-color: #901c39;
+  cursor: hand;
+}
+
+#chat-window #new-message textarea, #chat-window #new-message button {
+  height: 100%;
+  margin: 0 5px;
+}
+
+/* Users */
+
+#users {
+  width: 15%;
+  background-color: #222;
+  padding: 20px;
+}
+
+#users .user {
+  font-family: Verdana;
+  color: white;
+
+}
+
+#users .user h2{
+  font-size: 12pt;
+  font-weight: normal;
+  padding: 10px 0;
+}
+
+#users .add-user {
+  font-weight: normal;
+  font-family: lemonmilk;
+  font-size: 12pt;
+  margin: 10px 0;
+}
+
+#users .add-user a {
+  text-decoration: none;
+  display: inline-block;
+  width: 100%;
+  padding: 5px 10px;
+  border-radius: 50px;
+  background-color: #d1345b;
+  color: white;
+  text-align: center;
+}
+
+#users .add-user i{
+  padding-right: 10px;
+}
+
+#users h1 {
+  color: white;
+  border-bottom: 1px solid white;
+  font-family: lemonmilk;
+  font-size: 14pt;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
 
 /* Animations */
 
