@@ -15,7 +15,7 @@ if (mysqli_num_rows($rs_login) == 1) {
     if (password_verify($password, $details['password'])) {
         session_start();
         $_SESSION['username'] = $details['username'];
-        header('location: ../../chat.php');
+        header('location: ../../chat.php#last');
     } else {
         header('location: ../../error.php?id=3');
     }

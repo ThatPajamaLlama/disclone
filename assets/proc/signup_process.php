@@ -19,7 +19,7 @@ if (mysqli_num_rows($rsExistingUser) != 0) {
     $rsAddUser = mysqli_query($conn, $sqlAddUser);
     session_start();
     $_SESSION['username'] = $username;
-    header('location: ../../chat.php');
+    header('location: ../../chat.php#last');
 }
 
 ?>
