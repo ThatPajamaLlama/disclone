@@ -1,15 +1,17 @@
 <?php
 
-//TODO: SERVER BUTTON
+//TODO: Stop users accessing servers that they aren't in
 
 function DisplayServers($conn, $activeServer) {
     $username = $_SESSION['username'];
 
     // SQL statement to get all servers that user is in
-    $sql_userServers = "SELECT server.*
+    $sql_userServers = "SELECT server.*, min(room.id) as room
                         FROM membership
                         LEFT JOIN server ON server.id = membership.serverid
-                        WHERE membership.username = '$username'";
+                        LEFT JOIN room ON server.id = room.serverid
+                        WHERE membership.username = '$username'
+                        GROUP BY server.id";
     $rs_userServers = mysqli_query($conn, $sql_userServers);
 
     // Display server button
@@ -20,9 +22,11 @@ function DisplayServers($conn, $activeServer) {
         } else {
             echo "<div class='server'>";
         }
-        echo    "<div class='server-image' style='background-image: url(server-img/" . $server['id'] . ".jpg);'>";
-        echo    "</div>";
-        echo    "<h1>" . $server['name'] . "</h1>";
+        echo    "<a href='chat.php?room=" . $server['room'] . "'>";
+        echo        "<div class='server-image' style='background-image: url(server-img/" . $server['id'] . ".jpg);'>";
+        echo        "</div>";
+        echo        "<h1>" . $server['name'] . "</h1>";
+        echo    "</a>";
         echo "</div>";
     }
 }
