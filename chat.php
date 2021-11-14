@@ -51,7 +51,8 @@ $activeRoom = GetActiveRoom($conn, $activeServer);
 
 <html>
     <?php include "assets/inc/head.php"; ?>
-    <body id="chat" class="flex-container">
+    <body id="chat">
+        <div class="flex-container">
         <?php
         include "assets/inc/sidemenu.php";
         echo "<div id='chat-window'>";
@@ -69,7 +70,13 @@ $activeRoom = GetActiveRoom($conn, $activeServer);
         echo "</div>";
         
         include "assets/inc/users.php";
+
         ?>
+        </div>
+
+        <?php include "assets/inc/join_server_modal.php";?>
+
+
         
     </body>
 </html>
