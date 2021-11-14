@@ -587,6 +587,18 @@ form .section.error p {
   color: white;
 }
 
+#rooms p.help {
+  padding: 10px 0;
+  color: white;
+  font-family: lemonmilk;
+  font-size: 10pt;
+  text-align: center;
+}
+
+#rooms p.help span {
+  color: #d1345b;
+}
+
 /* Chat window */
 
 #chat-window {
@@ -660,6 +672,23 @@ form .section.error p {
 #chat-window #new-message textarea, #chat-window #new-message button {
   height: 100%;
   margin: 0 5px;
+}
+
+#chat-window .uh-oh {
+  height: 100%;
+}
+
+#chat-window .uh-oh h1, #chat-window .uh-oh h2 {
+  font-family: lemonmilk;
+  text-align: center;
+}
+
+#chat-window .uh-oh h1 {
+  color: white;
+}
+
+#chat-window .uh-oh h2 {
+  color: #34d1bf;
 }
 
 /* Users */

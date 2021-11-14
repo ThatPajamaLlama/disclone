@@ -32,17 +32,20 @@ function DisplayServers($conn, $activeServer) {
 }
 
 function DisplayRooms($conn, $activeServer, $activeRoom) {
-    $serverid = $activeServer['id'];
-    $sql_serverRooms = "SELECT * FROM room WHERE serverid='$serverid'";
-    $rs_serverRooms = mysqli_query($conn, $sql_serverRooms);
-    for ($i = 1; $i <= mysqli_num_rows($rs_serverRooms);  $i++) {
-        $room = mysqli_fetch_assoc($rs_serverRooms);
-        if ($room['id'] == $activeRoom['id']){
-            echo "<h2 class='room active'><a href='#'><i class='fa fa-angle-double-right' aria-hidden='true'></i>" . $room['name'] . "</a></h2>";
-        } else {
-            echo "<h2 class='room'><a href='?room=" . $room['id'] . "'><i class='fa fa-angle-double-right' aria-hidden='true'></i>" . $room['name'] . "</a></h2>";
+    if ($activeServer != null){
+        $serverid = $activeServer['id'];
+        $sql_serverRooms = "SELECT * FROM room WHERE serverid='$serverid'";
+        $rs_serverRooms = mysqli_query($conn, $sql_serverRooms);
+        for ($i = 1; $i <= mysqli_num_rows($rs_serverRooms);  $i++) {
+            $room = mysqli_fetch_assoc($rs_serverRooms);
+            if ($room['id'] == $activeRoom['id']){
+                echo "<h2 class='room active'><a href='#'><i class='fa fa-angle-double-right' aria-hidden='true'></i>" . $room['name'] . "</a></h2>";
+            } else {
+                echo "<h2 class='room'><a href='?room=" . $room['id'] . "'><i class='fa fa-angle-double-right' aria-hidden='true'></i>" . $room['name'] . "</a></h2>";
+            }
         }
     }
+    
 }
 
 ?>
@@ -59,14 +62,17 @@ function DisplayRooms($conn, $activeServer, $activeRoom) {
     </div>
 
     <div id="rooms">
-        <h1 class="server-name"><?php echo $activeServer['name'];?></h1>
-
-        <?php 
-            if ($_SESSION['username'] == $activeServer['owner']){
-                echo "<h2 class='add-room'><a href='#'><i class='fa fa-plus' aria-hidden='true'></i>Add room</a></h2>";
+        <?php
+            if ($activeServer != null) {
+                echo "<h1 class='server-name'>" . $activeServer['name'] . "</h1>";
+                if ($_SESSION['username'] == $activeServer['owner']){
+                    echo "<h2 class='add-room'><a href='#'><i class='fa fa-plus' aria-hidden='true'></i>Add room</a></h2>";
+                }
+                DisplayRooms($conn, $activeServer, $activeRoom);
+            } else {
+                echo "<h1 class='server-name'>No Servers/Rooms</h1>";
+                echo "<p class='help'>Click <span>Join</span> in the bottom-left to join a server!</p>";
             }
-
-            DisplayRooms($conn, $activeServer, $activeRoom);
         ?>
     </div>
 </div>

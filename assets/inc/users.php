@@ -15,7 +15,14 @@ function DisplayUsers($conn, $activeServer) {
 ?>
 
 <div id="users">
-    <h1>Users</h1>
-    <h2 class="add-user"><a href=""><i class="fa fa-user-plus" aria-hidden="true"></i>Invite User</a></h2>
-    <?php DisplayUsers($conn, $activeServer); ?>
+    <?php
+
+    if ($activeServer != null) {
+        echo "<h1>Users</h1>";
+        echo "<h2 class='add-user'><a href=''><i class='fa fa-user-plus' aria-hidden='true'></i>Invite User</a></h2>";
+        DisplayUsers($conn, $activeServer);
+    }
+
+    ?>
+    
 </div>

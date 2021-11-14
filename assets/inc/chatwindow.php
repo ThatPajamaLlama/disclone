@@ -1,18 +1,17 @@
-<div id="chat-window">
-    <div id="messages">
-        <!-- FILLED USING CHECKMESSAGES() JS METHOD -->
-    </div>
-    <div id="new-message">
-        <!-- <form action="assets/proc/send_message_process.php" method="POST"> -->
-        <form onSubmit="return SendMessage(event);" method="POST" >
-            <div class="flex-container">
-                <textarea name="text" id="text" placeholder="Your message"></textarea>
-                <input type="hidden" name="roomid" id="roomid" value="<?php echo $activeRoom['id'];?>"/>
-                <button type="submit"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
-            </div>
-        </form>
-    </div>
+<div id="messages">
+    <!-- FILLED USING CHECKMESSAGES() JS METHOD -->
 </div>
+<div id="new-message">
+    <!-- <form action="assets/proc/send_message_process.php" method="POST"> -->
+    <form onSubmit="return SendMessage(event);" method="POST" >
+        <div class="flex-container">
+            <textarea name="text" id="text" placeholder="Your message"></textarea>
+            <input type="hidden" name="roomid" id="roomid" value="<?php echo $activeRoom['id'];?>"/>
+            <button type="submit"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+        </div>
+    </form>
+</div>
+
 
 <script>
     window.onload = function() {
