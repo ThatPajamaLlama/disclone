@@ -55,8 +55,8 @@ function DisplayRooms($conn, $activeServer, $activeRoom) {
     <div id="servers">
         <?php DisplayServers($conn, $activeServer); ?>
         <div id="server-buttons">
-            <h1 class="btn"><a href="#">Join</a></h1>
-            <h1 class="btn"><a href="#">Create</a></h1>
+            <h1 class="btn"><a onclick="document.getElementById('join-server').style.display='block'">Join</a></h1>
+            <h1 class="btn"><a onclick="document.getElementById('create-server').style.display='block'">Create</a></h1>
             <h1 class="logout btn"><a href="assets/proc/logout_process.php">Logout</a></h1>
         </div>
     </div>
@@ -66,7 +66,7 @@ function DisplayRooms($conn, $activeServer, $activeRoom) {
             if ($activeServer != null) {
                 echo "<h1 class='server-name'>" . $activeServer['name'] . "</h1>";
                 if ($_SESSION['username'] == $activeServer['owner']){
-                    echo "<h2 class='add-room'><a href='#'><i class='fa fa-plus' aria-hidden='true'></i>Add room</a></h2>";
+                    echo "<h2 class='add-room'><a onclick='document.getElementById(\"create-room\").style.display=\"block\"'><i class='fa fa-plus' aria-hidden='true'></i>Add room</a></h2>";
                 }
                 DisplayRooms($conn, $activeServer, $activeRoom);
             } else {

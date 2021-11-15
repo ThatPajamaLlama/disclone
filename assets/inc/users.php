@@ -19,7 +19,11 @@ function DisplayUsers($conn, $activeServer) {
 
     if ($activeServer != null) {
         echo "<h1>Users</h1>";
-        echo "<h2 class='add-user'><a href=''><i class='fa fa-user-plus' aria-hidden='true'></i>Invite User</a></h2>";
+        echo "<h2 class='add-user'>";
+        echo    "<a onclick='document.getElementById(\"invite-user\").style.display=\"block\"'>";
+        echo        "<i class='fa fa-user-plus' aria-hidden='true'></i>Invite User";
+        echo    "</a>";
+        echo "</h2>";
         DisplayUsers($conn, $activeServer);
     }
 

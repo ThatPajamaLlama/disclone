@@ -74,7 +74,12 @@ $activeRoom = GetActiveRoom($conn, $activeServer);
         ?>
         </div>
 
-        <?php include "assets/inc/join_server_modal.php";?>
+        <?php
+        include "assets/inc/join_server_modal.php";
+        include "assets/inc/create_server_modal.php";
+        include "assets/inc/invite_user_modal.php";
+        include "assets/inc/create_room_modal.php";
+        ?>
 
 
         

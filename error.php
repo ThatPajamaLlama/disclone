@@ -18,6 +18,22 @@ function DisplayError($id) {
             echo "Incorrect login details";
             DisplayButton("login");
             break;
+        case 4:
+            echo "Image filetype not accepted (must be jpg)";
+            DisplayButton("chat");
+            break;
+        case 5:
+            echo "Image file too large";
+            DisplayButton("chat");
+            break;
+        case 6:
+            echo "A server image must be uploaded";
+            DisplayButton("chat");
+            break;
+        case 7:
+            echo "An unknown image issue occurred";
+            DisplayButton("chat");
+            break;
         default:
             echo "There was an issue";
             DisplayButton("default");

@@ -522,6 +522,7 @@ form .section.error p {
   color: white;
   text-decoration: none;
   padding: 5px 0;
+  cursor: hand;
 }
 
 #server-buttons h1.logout {
@@ -749,7 +750,7 @@ form .section.error p {
 /* ---------- MODALS ---------- */
 
 .modal {
-  /* display: none; */
+  display: none;
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
   left: 0;
@@ -781,6 +782,7 @@ form .section.error p {
   font-family: lemonmilk;
   text-align: center;
   border-radius: 5px 5px 0 0;
+  position: relative;
 }
 
 .modal-body {
@@ -790,8 +792,49 @@ form .section.error p {
   /* margin: 0 auto; */
 }
 
+.modal form {
+  width: 60%;
+  margin: 0 auto;
+}
 
-/* Animations */
+.modal form input {
+  width: 100%;
+  margin: 5px 0;
+}
+
+.modal input[type='submit'] {
+  display: block;
+  padding: 5px 0;
+  cursor: hand;
+}
+
+.close-modal {
+  display: inline-block;
+  right: 0;
+  cursor: hand;
+  transition-duration: .3s;
+  position: absolute;
+  right: 0;
+  padding-right: 15px;
+}
+
+.close-modal:hover {
+  color: black;
+  transition-duration: .3s;
+}
+
+/* Join server modal */
+
+#join-server input[type='text'] {
+  font-size: 22pt;
+  border: none;
+  background-color: #eee;
+  text-align: center;
+  padding: 5px 0;
+  border: 2px solid black;
+}
+
+/* --------- Animations ---------- */
 
 @keyframes PulseText {
   0% {
