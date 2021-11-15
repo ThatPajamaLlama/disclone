@@ -27,6 +27,6 @@ function DisplayUsers($conn, $activeServer) {
         DisplayUsers($conn, $activeServer);
     }
 
-    ?>
+    ?> 
     
 </div>

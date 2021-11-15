@@ -442,6 +442,11 @@ form .section.error p {
   width: 25%;
   background-color: #111;
   position: relative;
+  min-height: 100vh;
+}
+
+#server-list {
+  position: absolute;
 }
 
 .server {
@@ -468,6 +473,10 @@ form .section.error p {
   font-size: 8pt;
   text-align: center;
   word-wrap: break-word;
+}
+
+.server a {
+  text-decoration: none;
 }
 
 
@@ -576,6 +585,7 @@ form .section.error p {
   background-color: #d1345b;
   color: white;
   text-align: center;
+  cursor: hand;
 }
 
 #rooms .room a, #rooms .room a {
@@ -614,6 +624,7 @@ form .section.error p {
 
 #chat-window #messages {
   overflow-y: scroll;
+  height: 92vh;
   max-height: 92vh;
 }
 
@@ -702,6 +713,7 @@ form .section.error p {
   width: 15%;
   background-color: #222;
   padding: 20px;
+  overflow-y: scroll;
 }
 
 #users .user {
@@ -732,6 +744,7 @@ form .section.error p {
   background-color: #d1345b;
   color: white;
   text-align: center;
+  cursor: hand;
 }
 
 #users .add-user i{
@@ -823,9 +836,7 @@ form .section.error p {
   transition-duration: .3s;
 }
 
-/* Join server modal */
-
-#join-server input[type='text'] {
+#join-server input[type='text'], #invite-user h1.code {
   font-size: 22pt;
   border: none;
   background-color: #eee;
@@ -833,6 +844,32 @@ form .section.error p {
   padding: 5px 0;
   border: 2px solid black;
 }
+
+#invite-user h1.code {
+  font-family: Verdana;
+}
+
+#invite-user p {
+  text-align: center;
+  font-family: Verdana;
+  padding-bottom: 10px;
+}
+
+#create-server input[type='text'], #create-room input[type='text'] {
+  font-size: 14pt;
+  border: none;
+  background-color: #eee;
+  text-align: center;
+  padding: 5px 0;
+  border: 2px solid black;
+}
+
+#create-server input[type='file'] {
+  font-size: 12pt;
+  border: none;
+  padding: 5px 0;
+}
+
 
 /* --------- Animations ---------- */
 

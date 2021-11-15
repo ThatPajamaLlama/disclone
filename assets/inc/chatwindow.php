@@ -22,16 +22,19 @@
     function SendMessage(e) {
         e.preventDefault();
         var form = document.querySelector('#new-message form');
-        var request = new XMLHttpRequest();
-        request.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-                console.log("Done");
-                form.querySelector('#text').value = "";
-                CheckMessages();
-            }
-        };
-        request.open("POST", "assets/proc/send_message_process.php", true);
-        request.send(new FormData(form));
+        if (form.querySelector('#text').value != ""){
+            var request = new XMLHttpRequest();
+            request.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    console.log("Done");
+                    form.querySelector('#text').value = "";
+                    CheckMessages();
+                }
+            };
+            request.open("POST", "assets/proc/send_message_process.php", true);
+            request.send(new FormData(form));
+        }
+        
     }
 
     function CheckMessages() {

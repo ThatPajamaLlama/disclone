@@ -5,8 +5,8 @@
             <h1>Invite a user!</h1>
         </div>
         <div class="modal-body">
-            <p>Send this code to others:</p>
-            <h1><?php echo $activeServer['id'];?></h1>
+            <p>Send this to your friends</p>
+            <h1 class="code"><?php echo $activeServer['id'];?></h1>
         </div>
     </div>
 </div>
