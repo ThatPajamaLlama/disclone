@@ -46,7 +46,7 @@
                     html = "";
                     response.forEach(function(message) {
                         html += "<div class='message'>";
-                        html +=     "<h1>" + message[0] + "</h1>";
+                        html +=     "<h1>" + message[0] + "<span>" + message[2] + "</span></h1>";
                         html +=     "<p>" + message[1] +  "</p>";
                         html += "</div>";
                     });

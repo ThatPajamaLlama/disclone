@@ -11,7 +11,8 @@ $rs_messages = mysqli_query($conn, $sql_messages);
 
 for ($i =  1; $i <= mysqli_num_rows($rs_messages); $i++) {
     $message = mysqli_fetch_assoc($rs_messages);
-    $messages[] = [$message['username'], $message['message']];
+    $timestamp = date_create($message['timestamp']);
+    $messages[] = [$message['username'], $message['message'], date_format($timestamp, "d/m/y H:i")];
 }
 
 print_r(json_encode($messages));

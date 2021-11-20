@@ -638,6 +638,14 @@ form .section.error p {
   color: #34d1bf;
 }
 
+#chat-window .message span {
+  padding-left: 10px;
+  color: #ddd;
+  font-weight: normal;
+  font-style: italic;
+  font-size: 8pt;
+}
+
 #chat-window .message p {
   font-family: verdana;
   color: white;
